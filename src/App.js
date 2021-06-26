@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+// FUNCTIONAL COMPONENT
+const App = () => {
+  //hook
+  const [student, setStudent] = useState("Arslan");
 
-function App() {
+  const [employee, setEmployee] = useState({
+    Email: "ACb",
+    Address: "ISb ",
+    ContactNumber: "089789",
+  });
+
+  const handleUpdate = () => {
+    // setStudent(student + "Ali");
+    // setStudentInfo({ ...studentInfo, email: "arslan23@gmail.com" });
+    setEmployee({ ...employee, Address: "Rana.rafay96@gmail.com" });
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h2>Name: {employee.Email}</h2>
+      <h5>Email: {employee.Address}</h5>
+      <h5> Address: {employee.ContactNumber}</h5>
+      <button onClick={handleUpdate}>Update</button>
+    </>
   );
-}
+};
 
 export default App;
